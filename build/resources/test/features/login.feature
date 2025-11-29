@@ -22,3 +22,13 @@ Feature: Gestión de promociones en Fluffy Deals Hub
     Examples:
       | email              | password      | name      | start       | end         | description         | category | discount |
       | alice@example.com  | password123   | Promo QA  | 2025-12-21  | 2025-12-22  | Descuento automático| Salud    | 20       |
+
+  Scenario Outline: Validar campos obligatorios al crear promoción
+    And ingresa sus credenciales "<email>" y "<password>"
+    And confirma el inicio de sesión
+    And no ingresa datos obligatorios de la promoción
+    Then debería ver alertas de campos obligatorios faltantes
+
+    Examples:
+      | email              | password      |
+      | alice@example.com  | password123   |
