@@ -13,4 +13,7 @@ public class PromotionsPage {
 
     public static final Target PROMO_NAME_IN_LIST = Target.the("nombre de promo en lista")
             .locatedBy("//h3[contains(.,'{0}')]");
+
+    public static final Target METRICS_BUTTON = Target.the("botón ver métricas")
+            .located(By.xpath("//*[@id='root']/div[2]/main/div/div[2]/div[1]/div/div[2]/div[2]/button[1]"));
 }

@@ -2,6 +2,7 @@ package co.edu.udea.certificacion.petStore.stepdefinitions;
 
 
 import co.edu.udea.certificacion.petStore.models.User;
+import co.edu.udea.certificacion.petStore.questions.ErrorMessageIsVisible;
 import co.edu.udea.certificacion.petStore.questions.PromotionExists;
 import co.edu.udea.certificacion.petStore.tasks.*;
 import co.edu.udea.certificacion.petStore.questions.IsPromotionsVisible;
@@ -72,6 +73,20 @@ public class FluffyLoginStepDefinition {
     public void verifyPromotionExists(String name) {
         theActorInTheSpotlight().should(
                 seeThat(PromotionExists.withName(name))
+        );
+    }
+
+    @And("no ingresa datos obligatorios de la promoción")
+    public void doNotEnterMandatoryFields() {
+        theActorInTheSpotlight().attemptsTo(
+                TryCreatePromotionWithoutData.now()
+        );
+    }
+
+    @Then("debería ver alertas de campos obligatorios faltantes")
+    public void verifyErrorMessagesVisible() {
+        theActorInTheSpotlight().should(
+                seeThat(ErrorMessageIsVisible.displayed())
         );
     }
 }

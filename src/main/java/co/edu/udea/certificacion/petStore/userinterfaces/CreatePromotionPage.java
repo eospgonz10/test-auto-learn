@@ -25,4 +25,7 @@ public class CreatePromotionPage {
     public static final Target NEXT_BUTTON = Target.the("siguiente")
             .located(By.xpath("//button[contains(.,'Siguiente')]"));
 
+    public static final Target ERROR_MESSAGE = Target.the("mensaje de error")
+            .located(By.xpath("//*[@class='text-sm text-destructive']"));
+
 }
