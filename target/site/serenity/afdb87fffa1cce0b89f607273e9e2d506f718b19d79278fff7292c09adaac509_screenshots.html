@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="54d7edda3664db084bbb8bbd33e3e782ab3c9727d6e44528b99dbc012e89f214.html">Gesti&oacute;n De Promociones En Fluffy Deals Hub</a></span>
+                > <span class="truncate-60"><a
+                    href="afdb87fffa1cce0b89f607273e9e2d506f718b19d79278fff7292c09adaac509.html">Crear una promoci&oacute;n v&aacute;lida </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 30-11-2025 12:03</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Gestión De Promociones En Fluffy Deals Hub </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como usuario registrado<br />
+Quiero iniciar sesión y gestionar promociones<br />
+Para administrar las ofertas de la plataforma
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="478dede7257abe7991ff96e77edb3e3b45a1faf9c45fb039f3b47a9c2390c012.html">Firefox
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="3c07bffd5fe06edf199a85fa4da751b03f09f74a3629088ac0a48e3a84906a52.html">Firefox, Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="5698da923f295f46ce5ab64ced2311fc60caa4e36b32112606d3adcfdce3f60b.html">30 To 60 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Crear una promoci&oacute;n v&aacute;lida
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">And ingresa sus credenciales "&lt;email&gt;" y "&lt;password&gt;"<br>And confirma el inicio de sesión<br>And crea la promoción con los datos:<br><table class='embedded'><thead><th>name</th><th>&lt;name&gt;</th></thead><tbody><tr><td>start</td><td>&lt;start&gt;</td></tr><tr><td>end</td><td>&lt;end&gt;</td></tr><tr><td>description</td><td>&lt;description&gt;</td></tr><tr><td>category</td><td>&lt;category&gt;</td></tr><tr><td>discount</td><td>&lt;discount&gt;</td></tr></tbody></table><br>Then debería ver la promoción "&lt;name&gt;" creada en la lista</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" 1: Crear una promoci&oacute;n v&aacute;lida ({email=alice@example.com, password=password123, name=Promo QA, start=2025-12-21, end=2025-12-22, description=Descuento autom&aacute;tico, category=Salud, discount=20})" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" Given que el usuario est&aacute; en la p&aacute;gina principal de Fluffy Deals Hub" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" Usuario open the" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" usuario opens the browser at https://fluffy-deals-hub.vercel.app/" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" Usuario open the (completed)" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" Given que el usuario est&aacute; en la p&aacute;gina principal de Fluffy Deals Hub (completed)" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" When accede al formulario de autenticaci&oacute;n" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" Usuario go to login page" width="0"/>
+                <img src="5aebec4200ffbff988e7d92f97d79f51d30d5f236046e0318e7ac34ab7106e18.png" title=" usuario clicks on icono de login en p&aacute;gina principal" width="0"/>
+                <img src="d4ee99f61af2d9a17007f5198fdb28615f3c918ea300e0779ac2144bef4269d0.png" title=" usuario clicks on icono de login en p&aacute;gina principal (completed)" width="0"/>
+                <img src="d4ee99f61af2d9a17007f5198fdb28615f3c918ea300e0779ac2144bef4269d0.png" title=" Usuario go to login page (completed)" width="0"/>
+                <img src="d4ee99f61af2d9a17007f5198fdb28615f3c918ea300e0779ac2144bef4269d0.png" title=" When accede al formulario de autenticaci&oacute;n (completed)" width="0"/>
+                <img src="d4ee99f61af2d9a17007f5198fdb28615f3c918ea300e0779ac2144bef4269d0.png" title=" And ingresa sus credenciales &quot;alice@example.com&quot; y &quot;password123&quot;" width="0"/>
+                <img src="d4ee99f61af2d9a17007f5198fdb28615f3c918ea300e0779ac2144bef4269d0.png" title=" Usuario do login" width="0"/>
+                <img src="d4ee99f61af2d9a17007f5198fdb28615f3c918ea300e0779ac2144bef4269d0.png" title=" usuario enters 'alice@example.com' into campo de email" width="0"/>
+                <img src="cb77829557b20a4cf1ade2190f1c302120e7c9524c5c4c05e8901d1b18aa014c.png" title=" usuario enters 'alice@example.com' into campo de email (completed)" width="0"/>
+                <img src="cb77829557b20a4cf1ade2190f1c302120e7c9524c5c4c05e8901d1b18aa014c.png" title=" usuario enters 'password123' into campo de password" width="0"/>
+                <img src="220a051bff6e59535dc85a769d606fbf40cbc253c6f2d2f3bb37a58c400bcafb.png" title=" usuario enters 'password123' into campo de password (completed)" width="0"/>
+                <img src="220a051bff6e59535dc85a769d606fbf40cbc253c6f2d2f3bb37a58c400bcafb.png" title=" usuario clicks on bot&oacute;n iniciar sesi&oacute;n" width="0"/>
+                <img src="f8842d393b17c2d5572562c0907e12a42f7a8b0db076c289fd638b010462756b.png" title=" usuario clicks on bot&oacute;n iniciar sesi&oacute;n (completed)" width="0"/>
+                <img src="98add81af3983cfef82b8a4b094ffb0dea5164b368d66a593f38eb8846f19f26.png" title=" Usuario do login (completed)" width="0"/>
+                <img src="98add81af3983cfef82b8a4b094ffb0dea5164b368d66a593f38eb8846f19f26.png" title=" And ingresa sus credenciales &quot;alice@example.com&quot; y &quot;password123&quot; (completed)" width="0"/>
+                <img src="98add81af3983cfef82b8a4b094ffb0dea5164b368d66a593f38eb8846f19f26.png" title=" And confirma el inicio de sesi&oacute;n" width="0"/>
+                <img src="4e69539f2c93de727adbd1f71586465a06883216e59393bacb601c708a85f0b2.png" title=" And confirma el inicio de sesi&oacute;n (completed)" width="0"/>
+                <img src="4e69539f2c93de727adbd1f71586465a06883216e59393bacb601c708a85f0b2.png" title=" And crea la promoci&oacute;n con los datos:
+| name | Promo QA |
+| start | 2025-12-21 |
+| end | 2025-12-22 |
+| description | Descuento autom&aacute;tico |
+| category | Salud |
+| discount | 20 |" width="0"/>
+                <img src="4e69539f2c93de727adbd1f71586465a06883216e59393bacb601c708a85f0b2.png" title=" usuario clicks on bot&oacute;n Crear" width="0"/>
+                <img src="d19352b864da54798faf3143589daae722c9bf493f8fc23fc899f52bce4d4788.png" title=" usuario clicks on bot&oacute;n Crear (completed)" width="0"/>
+                <img src="bcd340d72ec971a6d4a3b6080c5fb38367ba984e292519df6d032c31a3732e84.png" title=" usuario enters 'Promo QA' into nombre" width="0"/>
+                <img src="e23b9419bd15b1bec176fff74365ed9a2f76f1f32c1fc0e6a025f184a9d76c12.png" title=" usuario enters 'Promo QA' into nombre (completed)" width="0"/>
+                <img src="e23b9419bd15b1bec176fff74365ed9a2f76f1f32c1fc0e6a025f184a9d76c12.png" title=" usuario enters '2025-12-21' into fecha inicio" width="0"/>
+                <img src="e9cacaed8cfbf86c202c21f3e2458763d6d54b61258d1f707cc22db0c507bfb2.png" title=" usuario enters '2025-12-21' into fecha inicio (completed)" width="0"/>
+                <img src="e9cacaed8cfbf86c202c21f3e2458763d6d54b61258d1f707cc22db0c507bfb2.png" title=" usuario enters '2025-12-22' into fecha fin" width="0"/>
+                <img src="e3de38b0b0a248a7bcb46cda7b12f9aeb7eee2191a0354c635596ec0d247cf2c.png" title=" usuario enters '2025-12-22' into fecha fin (completed)" width="0"/>
+                <img src="e3de38b0b0a248a7bcb46cda7b12f9aeb7eee2191a0354c635596ec0d247cf2c.png" title=" usuario enters 'Descuento autom&aacute;tico' into descripci&oacute;n" width="0"/>
+                <img src="82130a3fe758cab2652b520d535b527affd61387702881bf698c81a942825f03.png" title=" usuario enters 'Descuento autom&aacute;tico' into descripci&oacute;n (completed)" width="0"/>
+                <img src="82130a3fe758cab2652b520d535b527affd61387702881bf698c81a942825f03.png" title=" usuario clicks on bot&oacute;n categor&iacute;a" width="0"/>
+                <img src="c931b6eece01b0fceebae8a1ca0acdad8117fd2d055a140e952a283964afd81f.png" title=" usuario clicks on bot&oacute;n categor&iacute;a (completed)" width="0"/>
+                <img src="c931b6eece01b0fceebae8a1ca0acdad8117fd2d055a140e952a283964afd81f.png" title=" usuario types 'ENTER' in bot&oacute;n categor&iacute;a" width="0"/>
+                <img src="ab5d9d245672306aa88367bf31e5a21959c214710e7fbd65cece2524bedb644c.png" title=" usuario types 'ENTER' in bot&oacute;n categor&iacute;a (completed)" width="0"/>
+                <img src="ab5d9d245672306aa88367bf31e5a21959c214710e7fbd65cece2524bedb644c.png" title=" usuario enters '20' into descuento" width="0"/>
+                <img src="97d3869bb01c3beb920b74673f55ad5fe7d94ccb3ebacea383ba7dabaf982c51.png" title=" usuario enters '20' into descuento (completed)" width="0"/>
+                <img src="97d3869bb01c3beb920b74673f55ad5fe7d94ccb3ebacea383ba7dabaf982c51.png" title=" usuario clicks on siguiente" width="0"/>
+                <img src="fdcfd81fde8b38b6fa51a2d9ef6a9197bf56911490de54b17ac6a998da4a2fd7.png" title=" usuario clicks on siguiente (completed)" width="0"/>
+                <img src="fdcfd81fde8b38b6fa51a2d9ef6a9197bf56911490de54b17ac6a998da4a2fd7.png" title=" Usuario select product" width="0"/>
+                <img src="f85fa70d29cb13f18f9bb93e6175e3ebe5c1f7e7755ce72493fa36868efb0fb9.png" title=" usuario clicks on checkbox producto" width="0"/>
+                <img src="07271127e9864e48e0bdbc4160aead9c1f6a0ba5647a9f79fea5616786fe0636.png" title=" usuario clicks on checkbox producto (completed)" width="0"/>
+                <img src="af0dfbc9cd13af9e6421a14c905d0afa29be5f6053db5050d233648e6216d7a2.png" title=" usuario clicks on bot&oacute;n guardar" width="0"/>
+                <img src="d71997a8806c6269633fb93dbb4c9a07ff31cd1899662b4d1b62f64eaa8610ef.png" title=" usuario clicks on bot&oacute;n guardar (completed)" width="0"/>
+                <img src="545977b08ca7ff323cef5683dc0d057cb33d4529addabd6fedbb9756b1ce7df9.png" title=" Usuario select product (completed)" width="0"/>
+                <img src="545977b08ca7ff323cef5683dc0d057cb33d4529addabd6fedbb9756b1ce7df9.png" title=" And crea la promoci&oacute;n con los datos:
+| name | Promo QA |
+| start | 2025-12-21 |
+| end | 2025-12-22 |
+| description | Descuento autom&aacute;tico |
+| category | Salud |
+| discount | 20 | (completed)" width="0"/>
+                <img src="545977b08ca7ff323cef5683dc0d057cb33d4529addabd6fedbb9756b1ce7df9.png" title=" Then deber&iacute;a ver la promoci&oacute;n &quot;Promo QA&quot; creada en la lista" width="0"/>
+                <img src="545977b08ca7ff323cef5683dc0d057cb33d4529addabd6fedbb9756b1ce7df9.png" title=" Then promotion exists" width="0"/>
+                <img src="545977b08ca7ff323cef5683dc0d057cb33d4529addabd6fedbb9756b1ce7df9.png" title=" 1: Crear una promoci&oacute;n v&aacute;lida ({email=alice@example.com, password=password123, name=Promo QA, start=2025-12-21, end=2025-12-22, description=Descuento autom&aacute;tico, category=Salud, discount=20}) (completed): <span class='success-color'>SUCCESS</span>" width="0"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.9.8</span>
+</div>
+</body>
+</html>

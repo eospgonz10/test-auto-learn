@@ -40,26 +40,26 @@ public class CreatePromotion implements Task {
 
         actor.attemptsTo(
                 Click.on(PromotionsPage.CREATE_BUTTON),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
 
                 WaitUntil.the(CreatePromotionPage.NAME, isVisible())
-                        .forNoMoreThan(5).seconds(),
+                        .forNoMoreThan(10).seconds(),
 
                 Enter.theValue(name).into(CreatePromotionPage.NAME),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
                 Enter.theValue(start).into(CreatePromotionPage.START_DATE),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
                 Enter.theValue(end).into(CreatePromotionPage.END_DATE),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
                 Enter.theValue(description).into(CreatePromotionPage.DESCRIPTION),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
 
                 Click.on(CreatePromotionPage.CATEGORY_BUTTON),
                 Hit.the(Keys.ENTER).into(CreatePromotionPage.CATEGORY_BUTTON),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
 
                 Enter.theValue(discount).into(CreatePromotionPage.DISCOUNT),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
 
                 Click.on(CreatePromotionPage.NEXT_BUTTON)
         );

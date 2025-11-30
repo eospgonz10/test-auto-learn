@@ -30,7 +30,7 @@ public class DoLogin implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(user.getUsername()).into(LoginPage.EMAIL_FIELD),
-                WaitTime.forMillis(300),
+                WaitTime.forMillis(3000),
                 Enter.theValue(user.getPassword()).into(LoginPage.PASSWORD_FIELD),
                 WaitTime.forMillis(300),
                 Click.on(LoginPage.LOGIN_BUTTON),

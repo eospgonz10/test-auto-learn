@@ -1,16 +1,24 @@
 buildscript {
+    ext.serenityPluginVersion = '3.9.8'
     repositories {
         mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:$serenityPluginVersion")
+        classpath "net.serenity-bdd:serenity-single-page-report:$serenityPluginVersion"
     }
 }
 
 plugins {
-	id 'io.github.jumosqu12.screenplayarchitecture' version '2.0.1'
-	id 'java'
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.9.8"
+    id 'io.github.jumosqu12.screenplayarchitecture' version '2.0.1'
+    id 'java'
     id 'eclipse'
     id 'idea'
-    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.1.0'
 }
+
+defaultTasks 'clean','test','aggregate'
+apply plugin: 'net.serenity-bdd.serenity-gradle-plugin'
 
 group 'co.edu.udea.certificacion'
 
@@ -73,12 +81,15 @@ dependencies {
 tasks.named('test') {
     useJUnit()
     testLogging.showStandardStreams = false
-    finalizedBy 'aggregate'
+    systemProperties System.getProperties()
 }
 
 // Configuración de Serenity para reportes
 serenity {
-    outputDirectory = file("${buildDir}/site/serenity")
+    testRoot = "co.edu.udea.certificacion.petStore.runners"
+    requirementsBaseDir = "src/test/resources/features"
+    reports = ["single-page-html"]
 }
 
 gradle.startParameter.continueOnFailure = true
+test.finalizedBy(aggregate)

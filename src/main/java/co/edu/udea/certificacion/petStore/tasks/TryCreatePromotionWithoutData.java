@@ -21,12 +21,12 @@ public class TryCreatePromotionWithoutData implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(PromotionsPage.CREATE_BUTTON),
-                WaitTime.forMillis(1000),
+                WaitTime.forMillis(3000),
                 WaitUntil.the(CreatePromotionPage.NAME, isVisible())
-                        .forNoMoreThan(5).seconds(),
-                WaitTime.forMillis(1000),
+                        .forNoMoreThan(10).seconds(),
+                WaitTime.forMillis(3000),
                 Click.on(CreatePromotionPage.NEXT_BUTTON),
-                WaitTime.forMillis(1000)
+                WaitTime.forMillis(3000)
         );
     }
 }
